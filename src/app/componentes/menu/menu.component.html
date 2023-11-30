@@ -1,0 +1,21 @@
+<mat-sidenav-container>
+<mat-sidenav #menuLateral>
+    <mat-nav-list>
+        <div *ngFor="let opcion of opciones">
+    <button mat-icon-button [routerLink]="opcion.url" class="menu-button" (click)="menuLateral.toggle()">
+        <img [src]="opcion.icono">
+        {{ opcion.titulo}}
+    </button>
+    </div>
+</mat-nav-list>
+</mat-sidenav>
+<mat-sidenav-content>
+    <mat-toolbar class="mat-elevatmat-z4" color ="primary">
+        <button mat-icon-button (click)="menuLateral.toggle()">
+            <mat-icon>menu</mat-icon>
+            Menu
+        </button>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+</mat-sidenav-content>
+</mat-sidenav-container>
